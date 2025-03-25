@@ -112,4 +112,4 @@ This is a classic stack overflow vulnerability. Attackers can craft malicious in
 With a carefully crafted payload, attackers can not only crash the router but also remotely execute arbitrary commands, gaining full control of the device. This poses a severe threat to user network security, enabling DNS hijacking, network traffic interception, or using the device as a pivot for internal network attacks.  
 
 # Mitigation Strategies (Supplement)  
-- use 'strncpy',strncpy allows you to specify a maximum copy length to prevent overrunning the buffer
+- use `strncpy`,strncpy allows you to specify a maximum copy length to prevent overrunning the buffer
