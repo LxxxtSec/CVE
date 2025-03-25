@@ -45,7 +45,8 @@ print(res.content)
 
 ### Vulnerability Trigger Result Screenshots  
 + After the attack, the router crashes and displays the following interface, becoming inaccessible.  
-+ ![](https://cdn.nlark.com/yuque/0/2025/png/38476061/1739874809482-c83c5b33-c50e-4d64-a82d-b150243dded9.png)  
++ ![image](https://github.com/user-attachments/assets/02c2a946-e022-405b-997f-5517515453d6)
+
 ![](file-BhVt8NRfckRnDUbSWTPpaV.png)  
 
 ### Attack Process and Code Analysis Screenshots  
