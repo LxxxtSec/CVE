@@ -5,7 +5,7 @@ Stack Overflow to RCE Vulnerability in Tenda AC10 V4.0 V16.03.10.13 Router
 ## Vulnerability Description  
 The Tenda AC10 V4.0 (V16.03.10.13) router is affected by a stack overflow vulnerability. Attackers can exploit this vulnerability by sending specially crafted requests, leading to a stack overflow that may crash the router or disrupt its services.  
 
-The vulnerability resides in the `setSmartPowerManagement` function. Specifically, the program fails to properly restrict the length of user-supplied input for the `list` parameter, resulting in a stack overflow when calling `scanf`.  
+The vulnerability resides in the `ShutdownSetAdd` function. Specifically, the program fails to properly restrict the length of user-supplied input for the `list` parameter, resulting in a stack overflow when calling `scanf`.  
 
 ## Vulnerability Type  
 Binary Vulnerability (Stack Overflow)  
@@ -28,7 +28,7 @@ Attackers can crash the router by sending a malicious request. Below is an examp
 ```python  
 import requests  
 
-url = "http://192.168.85.143/goform/setSmartPowerManagement"  
+url = "http://192.168.85.143/goform/ShutdownSetAdd"  
 data = {  
     'time': 'A' * 10000  # Crafted long data  
 }  
@@ -64,7 +64,7 @@ The following screenshots demonstrate the program's output after executing the a
 **Baidu Netdisk Video**: [https://pan.baidu.com/s/1k5EVdGBMxD7mUocgk9qHJg?pwd=879](https://pan.baidu.com/s/1k5EVdGBMxD7mUocgk9qHJg?pwd=879p) **(Extraction Code: 879p)**  
 
 ## Vulnerability Location  
-+ The vulnerability is located in the `setSmartPowerManagement` function, where the `time` parameter's length is not restricted, resulting in a stack overflow.  
++ The vulnerability is located in the `ShutdownSetAdd` function, where the `time` parameter's length is not restricted, resulting in a stack overflow.  
 
 ## Vulnerability Impact  
 + Attackers can exploit this vulnerability to crash the router, disrupting its services.  
